@@ -1,5 +1,5 @@
 {
-  "name": "nand2tetris",
+  "name": "hackhdl",
   "rules": {
     "source_file": {
       "type": "REPEAT",

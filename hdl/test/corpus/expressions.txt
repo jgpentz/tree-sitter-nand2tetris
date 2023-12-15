@@ -1,0 +1,30 @@
+==================
+Expression
+==================
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a=in);
+}
+---
+
+(source_file
+    (chip_definition
+        (identifier)
+        (block
+            (inputs
+                (parameter
+                    (identifier)))
+            (outputs
+                (parameter
+                    (identifier)))
+            (parts
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier)))))))
+

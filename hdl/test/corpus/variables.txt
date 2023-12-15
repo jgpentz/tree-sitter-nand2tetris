@@ -1,0 +1,99 @@
+==================
+Parameter
+==================
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a=in, b=in, out=out);
+}
+---
+
+(source_file
+    (chip_definition
+        (identifier)
+        (block
+            (inputs
+                (parameter
+                    (identifier)))
+            (outputs
+                (parameter
+                    (identifier)))
+            (parts
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier)))))))
+
+==================
+Bus Index
+==================
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a[7]=in);
+}
+---
+
+(source_file
+    (chip_definition
+        (identifier)
+        (block
+            (inputs
+                (parameter
+                    (identifier)))
+            (outputs
+                (parameter
+                    (identifier)))
+            (parts
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier)
+                            (bus_index))
+                        (identifier)))))))
+
+==================
+Bus Slicing
+==================
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a[0..15]=in);
+}
+---
+
+(source_file
+    (chip_definition
+        (identifier)
+        (block
+            (inputs
+                (parameter
+                    (identifier)))
+            (outputs
+                (parameter
+                    (identifier)))
+            (parts
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier)
+                            (bus_slicing))
+                        (identifier)))))))

@@ -10,7 +10,7 @@ module.exports = grammar({
         source_file: $ => repeat($._definition),
         
         _definition: $ => choice(
-            $.chip_definition
+            $.chip_definition,
         ),
 
         chip_definition: $ => seq(

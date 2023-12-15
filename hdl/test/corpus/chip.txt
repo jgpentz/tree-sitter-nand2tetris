@@ -1,0 +1,76 @@
+==================
+chip 
+==================
+CHIP ALU {
+    IN  
+        x[16], y[16],
+        zx, 
+        no;
+
+    OUT 
+        out[16],
+        zr,
+        ng;
+
+    PARTS:
+    Mux16(a=x, b[0]=false, sel=zx, out[5..15]=zdx);
+    Not16(in[5..15]=zdx, out=notzdx);
+}
+---
+
+(source_file
+    (chip_definition
+        (identifier)
+        (block
+            (inputs
+                (parameter
+                    (identifier)
+                    (bus_index))
+                (parameter
+                    (identifier)
+                    (bus_index))
+                (parameter
+                    (identifier))
+                (parameter
+                    (identifier)))
+            (outputs
+                (parameter
+                    (identifier)
+                    (bus_index))
+                (parameter
+                    (identifier))
+                (parameter
+                    (identifier)))
+            (parts
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier)
+                            (bus_index))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier)
+                            (bus_slicing))
+                        (identifier)))
+
+                (part
+                    (identifier)
+                    (expression
+                        (parameter
+                            (identifier)
+                            (bus_slicing))
+                        (identifier))
+                    (expression
+                        (parameter
+                            (identifier))
+                        (identifier)))))))
