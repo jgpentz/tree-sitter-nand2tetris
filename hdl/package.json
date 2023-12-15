@@ -1,0 +1,17 @@
+{
+  "name": "tree-sitter-hackhdl",
+  "version": "1.0.0",
+  "description": "Tree sitter parser for the hack programming language used in the Nand2tetris MOOC.",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "J. Pentz",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}
