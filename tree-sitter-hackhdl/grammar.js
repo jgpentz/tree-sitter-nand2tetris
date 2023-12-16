@@ -48,7 +48,7 @@ module.exports = grammar({
         ),
 
         part: $ => seq(
-            $.identifier,
+            field('name', $.identifier),
             '(',
             commaSep($.expression),
             ')',
@@ -61,20 +61,25 @@ module.exports = grammar({
             'PARTS'
         ),
 
-        bool: $ => choice(
-            'true',
-            'false'
-        ),
+        true: _ => 'true',
+        false: _ => 'false',
 
         parameter: $ => seq(
             $.identifier,
-            optional(choice($.bus_index, $.bus_slicing))
+            optional(choice(
+                field('bus_index', $.bus_index), 
+                field('bus_slicing', $.bus_slicing)
+            ))
         ),
 
         expression: $ => seq(
-            $.parameter,
+            field('left', $.parameter),
             '=',
-            $.identifier
+            choice(
+                $.identifier, 
+                $.true, 
+                $.false
+            )
         ),
 
         identifier: $ => /[\w_-]+/,

@@ -25,17 +25,24 @@
   {
     "type": "chip_definition",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "block",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -44,17 +51,32 @@
   {
     "type": "expression",
     "named": true,
-    "fields": {},
+    "fields": {
+      "left": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
+        {
+          "type": "false",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
         },
         {
-          "type": "parameter",
+          "type": "true",
           "named": true
         }
       ]
@@ -93,19 +115,32 @@
   {
     "type": "parameter",
     "named": true,
-    "fields": {},
+    "fields": {
+      "bus_index": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bus_index",
+            "named": true
+          }
+        ]
+      },
+      "bus_slicing": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bus_slicing",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "bus_index",
-          "named": true
-        },
-        {
-          "type": "bus_slicing",
-          "named": true
-        },
         {
           "type": "identifier",
           "named": true
@@ -116,17 +151,24 @@
   {
     "type": "part",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
-          "named": true
-        },
-        {
-          "type": "identifier",
           "named": true
         }
       ]
@@ -216,7 +258,7 @@
   },
   {
     "type": "false",
-    "named": false
+    "named": true
   },
   {
     "type": "identifier",
@@ -224,7 +266,7 @@
   },
   {
     "type": "true",
-    "named": false
+    "named": true
   },
   {
     "type": "{",

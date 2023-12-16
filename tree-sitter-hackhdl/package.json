@@ -13,5 +13,16 @@
   },
   "devDependencies": {
     "tree-sitter-cli": "^0.20.8"
-  }
-}
+  },
+  "tree-sitter": [
+      {
+          "scope": "source.hdl",
+         "file-types": [
+            "hdl"
+          ],
+          "highlights": [
+            "queries/highlights.scm"
+          ]
+      }
+  ]
+} 
