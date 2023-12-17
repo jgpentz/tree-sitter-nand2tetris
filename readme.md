@@ -62,4 +62,21 @@ the `tree-sitter-nand2tetris/tree-sitter-hackasm/queries/highlights.scm` and `tr
 
 ## ☠️  Postmortem ☠️
 
+Digging into file parsing, parse generators, and syntax highlighting gave me a lot of new insights and respect for everything involved in the process.
+In this section I would like to share some of that information, and hopefully I can look back on this as a reference.
+
+### Parsing
+
+The term [parsing](https://en.wikipedia.org/wiki/Parsing) has a long history and interesting crossovers in linguistics and computer science.
+In linguistics, the parsing is often used as a method of understanding the exact meaning of a sentence,
+conforming to the rules of a formal grammar. In computer science, the term is used to describe the analysis
+of a sentence or string of word into it's constituents, resulting in a parse tree that  shows their
+relationship to each other.
+
+The following sentence might be broken down and put into a parse tree as follows:
+
+`the rat ate cheese`
+
+[!simple sentence tree](.assets/simple-sentence.png)
+
 
