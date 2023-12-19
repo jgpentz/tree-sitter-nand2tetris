@@ -22,4 +22,5 @@ jobs:
           npm install
           cd node_modules
           cd tree-sitter-cli
-          tree-sitter
+          ls -a
+          ./tree-sitter
