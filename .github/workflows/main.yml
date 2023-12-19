@@ -14,10 +14,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: latest
-      - name: run npm
+      - name: install tree-sitter-cli
         run: |
           npm install -g tree-sitter-cli
+          tree-sitter --version
+      - name: run tests
+        run: |
           cd /home/runner/work/tree-sitter-nand2tetris/tree-sitter-nand2tetris
           cd tree-sitter-hackhdl
-          npm install
-          tree-sitter
+          tree-sitter generate
+          tree-sitter test
+          
+          
