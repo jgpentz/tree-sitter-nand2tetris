@@ -52,7 +52,7 @@ CHIP ALU {
                         (parameter
                             (identifier)
                             (bus_index))
-                        (identifier))
+                        (false))
                     (expression
                         (parameter
                             (identifier))
