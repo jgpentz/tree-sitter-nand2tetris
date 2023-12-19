@@ -23,4 +23,5 @@ jobs:
           cd node_modules
           cd tree-sitter-cli
           ls -a
+          chmod +x tree-sitter
           ./tree-sitter
