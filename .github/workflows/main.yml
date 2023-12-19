@@ -18,10 +18,6 @@ jobs:
         run: |
           cd /home/runner/work/tree-sitter-nand2tetris/tree-sitter-nand2tetris
           cd tree-sitter-hackhdl
-          pwd
           npm install
+          ./node_modules/.bin/tree-sitter
           cd node_modules
-          cd tree-sitter-cli
-          ls -a
-          chmod +x tree-sitter
-          ./tree-sitter
