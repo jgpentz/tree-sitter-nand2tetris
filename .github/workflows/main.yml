@@ -20,4 +20,5 @@ jobs:
           cd tree-sitter-hackhdl
           pwd
           npm install
+          pwd
           ./node_modules/tree-sitter-cli/tree-sitter -h
