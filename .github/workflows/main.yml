@@ -15,9 +15,6 @@ jobs:
         with:
           node-version: latest
       - name: run hdl test
-      - run: |
+        run: |
           cd tree-sitter-nand2tetris/tree-sitter-hackhdl
-      - run: |
           echo pwd
-      
-    
