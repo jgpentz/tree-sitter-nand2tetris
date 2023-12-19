@@ -16,7 +16,8 @@ jobs:
           node-version: latest
       - name: run npm
         run: |
+          npm install -g tree-sitter-cli
           cd /home/runner/work/tree-sitter-nand2tetris/tree-sitter-nand2tetris
           cd tree-sitter-hackhdl
           npm install
-          ./node_modules/.bin/tree-sitter --help
+          tree-sitter
