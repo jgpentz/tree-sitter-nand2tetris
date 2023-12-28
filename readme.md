@@ -144,6 +144,9 @@ for more information.
 ### References
 
 [1]https://en.wikipedia.org/wiki/Parsing
+
 [2]https://www.cs.cornell.edu/courses/cs2112/2018fa/lectures/lecture.html?id=parsing
+
 [3]https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees/
+
 [4]https://neovim.io/doc/user/treesitter.html#treesitter-query
