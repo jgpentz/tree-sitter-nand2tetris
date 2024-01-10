@@ -22,6 +22,7 @@ A lot of this section will be copy+paste from the [Neovim tree-sitter github pag
 Open up your `init.lua` file (or other plugin file e.g. `after/plugin/tree-sitter.lua`) and add the following snippet:
 
 ```lua
+-- Configuration for the hack hdl (nand2tetris) parser
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.hackhdl= {
   install_info = {
@@ -40,6 +41,25 @@ vim.filetype.add({
         hdl = 'hackhdl',
     }
 })
+
+-- Configuration for the hack asm (nand2tetris) parser
+parser_config.hackasm = {
+  install_info = {
+    url = "~/Code/tree-sitter-nand2tetris/tree-sitter-hackasm", -- local path or git repo
+    files = {"src/parser.c"}, -- note that some parsers also require src/scanner.c or src/scanner.cc
+    -- optional entries:
+    branch = "main", -- default branch in case of git repo if different from master
+    generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+    requires_generate_from_grammar = true, -- if folder contains pre-generated src/parser.c
+  },
+  filetype = "asm", -- if filetype does not match the parser name
+}
+
+vim.filetype.add({
+    extension = {
+        hdl = 'hackasm',
+    }
+})
 ```
 
 Start `nvim` then install the parsers with `:TSInstall hackasm` and `:TSInstall hackhdl`.
@@ -53,7 +73,7 @@ query.  The highlights query uses captures to assign arbitrary highlight names t
 Each highlight name can then be mapped to a color.
 
 The highlights files specifying the captures for the hackasm/hackhdl language are
-located in  `tree-sitter-nand2tetris/tree-sitter-hackasm` and `tree-sitter-nand2tetris/tree-sitter-hackhdl` respectively.
+located in  `tree-sitter-nand2tetris/tree-sitter-hackasm/queries` and `tree-sitter-nand2tetris/tree-sitter-hackhdl/queries` respectively.
 
 1. In your neovim config direcotory (e.g. `~/.config/nvim`) create two new directories in the `~/.config/nvim/after/queries` direcotory.
 Name these directories `hackhdl` and `hackasm`.  
