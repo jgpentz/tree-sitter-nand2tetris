@@ -1,0 +1,14 @@
+==================
+C Instruction
+==================
+D = M + 1;JEQ
+---
+
+(source_file
+    (c_instruction
+        (builtin_regs)
+        (binary_expression
+            (builtin_regs)
+            (number))
+        (jump_expression
+            (conditionals))))

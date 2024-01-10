@@ -1,0 +1,25 @@
+==================
+Label Title
+==================
+(TITLE)
+---
+
+(source_file
+    (label
+        (identifier)))
+
+==================
+Label Reference
+==================
+@R0
+@TITLE
+@256
+---
+
+(source_file
+    (label
+        (builtin_symbols))
+    (label
+        (identifier))
+    (label
+        (identifier)))

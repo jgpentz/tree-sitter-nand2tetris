@@ -1,0 +1,62 @@
+==================
+Unary Expression
+==================
+!A
+-1
+---
+
+(source_file
+    (c_instruction
+        (unary_expression
+            (builtin_regs)))
+    (c_instruction
+        (number)))
+
+==================
+Binary Expression
+==================
+D + 1
+D - 1
+D + A
+D - A
+D & A
+D | A
+---
+
+(source_file
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (number)))
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (number)))
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (builtin_regs)))
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (builtin_regs)))
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (builtin_regs)))
+    (c_instruction
+        (binary_expression
+            (builtin_regs)
+            (builtin_regs))))
+
+==================
+Jump Expression
+==================
+0;JMP
+---
+
+(source_file
+    (c_instruction
+        (number)
+            (jump_expression
+                (conditionals))))
