@@ -18,10 +18,16 @@ jobs:
         run: |
           npm install -g tree-sitter-cli
           tree-sitter --version
-      - name: run tests
+      - name: run hdl tests
         run: |
           cd /home/runner/work/tree-sitter-nand2tetris/tree-sitter-nand2tetris
           cd tree-sitter-hackhdl
+          tree-sitter generate
+          tree-sitter test
+      - name: run asm tests
+        run: |
+          cd /home/runner/work/tree-sitter-nand2tetris/tree-sitter-nand2tetris
+          cd tree-sitter-hackasm
           tree-sitter generate
           tree-sitter test
           
